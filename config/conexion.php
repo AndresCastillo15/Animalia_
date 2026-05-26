@@ -15,7 +15,7 @@
 
         if (!$conexion) 
         {
-            die("La conexión con la BD falló: " + mysqli_error($conexion));  
+            die("La conexión con la BD falló: " . mysqli_error($conexion));  
         }
         /*else
         {
@@ -25,7 +25,7 @@
     }
     //probar coneccion
     //echo '<br>Probando conexión a la BD...  <br>';
-    //$con = conectar();
+    //$con = conexion();
 
 
 ?>

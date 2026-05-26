@@ -10,7 +10,7 @@
         echo "<br>función validar_usuario, del modelo, ejecutándose...";
 
         // Instruccion SQL para hacer la consulta a la BD
-        $sql = "SELECT id_usuario, login_usuario, password_usuario, estado_usuario, tipo_usuario, COUNT(*) AS contar FROM usuario WHERE login_usuario = '$login' AND password_usuario = '$password'";
+        $sql = "SELECT correo, id_usuario, login_usuario, password_usuario, estado_usuario, tipo_usuario, COUNT(*) AS contar FROM usuario WHERE login_usuario = '$login' AND password_usuario = '$password'";
 
         // Ejecutar la consulta SQL a la BD
         $consulta = mysqli_query($conexion, $sql) or trigger_error("Error en la consulta MySql: ".mysqli_error($conexion));
@@ -25,6 +25,8 @@
             echo '<br>El usuario existe en la BD';
             echo '<br>Usuario: '.$resultado['login_usuario'];
             echo '<br>ID: '.$resultado['id_usuario'];
+            echo '<br>Password: '.$resultado['password_usuario'];
+            echo '<br>Correo: '.$resultado['correo'];
             echo '<br>Tipo: '.$resultado['tipo_usuario'];
             echo '<br>Estado: '.$resultado['estado_usuario'];
         }
@@ -39,8 +41,8 @@
     
     // probar consulta a BD
 
-    $user = 'admin';
-    $pass = 12345;
+    $user = 'Andres';
+    $pass = 54321;
 
     echo 'Probando consulta...';
     echo '<br>'.$user;
